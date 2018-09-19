@@ -17,7 +17,7 @@ const waschstrasseSchema = new mongoose.Schema({
   öfnungszeiten: {
     type: String,
   },
-  preise: {
+  preiseProgramme: {
     type: String,
   },
   sonderAngebote: {
