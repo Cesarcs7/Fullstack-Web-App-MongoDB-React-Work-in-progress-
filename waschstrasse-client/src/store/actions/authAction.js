@@ -8,7 +8,7 @@ export function setCurrentUser(user) {
   };
 }
 
-export async function authUser(type, userData) {
+export function authUser(type, userData) {
   return (dispatch) => {
     return new Promise((resolve, reject) => {
       return apiCall('post', `/api/auth/${type}`, userData)

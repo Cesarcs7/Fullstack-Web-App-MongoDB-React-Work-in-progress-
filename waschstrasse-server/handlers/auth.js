@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 const db = require('../models/index.js');
 
 exports.signin = async (req, res, next) => {
+  console.log(req.body);
+
   try {
     const firma = await db.Firma.findOne({
       email: req.body.email,
@@ -32,6 +34,8 @@ exports.signin = async (req, res, next) => {
 };
 
 exports.signup = async (req, res, next) => {
+  console.log(req.body);
+  
   try {
     const firma = await db.Firma.create(req.body);
     const { id, firmaName, profileImageUrl } = firma;

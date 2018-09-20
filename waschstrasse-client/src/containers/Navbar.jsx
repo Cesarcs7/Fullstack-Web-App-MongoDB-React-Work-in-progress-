@@ -13,12 +13,6 @@ class Navbar extends Component {
             <img src={logo} alt="Simple Movie Manager" />
           </Link>
           </div>
-<<<<<<< HEAD
-
-          <ul className="nav navbar-nav navbar-right">
-            <li>
-            <Link to="signup">Sign up</Link>
-=======
           <ul className='nav navbar-nav navigation_links'>
           <li>
             <Link to ='waschstrasse'>Waschstrasse</Link>
@@ -30,7 +24,6 @@ class Navbar extends Component {
         <ul className='nav navbar-nav navbar-right'>
           <li>
             <Link to ='signup'>Sign up</Link>
->>>>>>> develop
           </li>
             <li>
             <Link to="signin">Sign in</Link>
