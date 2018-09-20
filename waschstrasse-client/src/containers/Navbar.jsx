@@ -7,29 +7,29 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand">
-        <div className='container-fluid'>
-        <div className="navbar-header">
-          <Link to='/' className='navbar-brand'>
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <Link to="/" className="navbar-brand">
             <img src={logo} alt="Simple Movie Manager" />
           </Link>
           </div>
-        
-        <ul className='nav navbar-nav navbar-right'>
-          <li>
-            <Link to ='signup'>Sign up</Link>
+
+          <ul className="nav navbar-nav navbar-right">
+            <li>
+            <Link to="signup">Sign up</Link>
           </li>
-          <li>
-            <Link to ='signin'>Sign in</Link>
+            <li>
+            <Link to="signin">Sign in</Link>
           </li>
-        </ul>
+          </ul>
         </div>
       </nav>
     );
   }
 }
 
-function mapStateToProps(state){
-  return{
+function mapStateToProps(state) {
+  return {
     currentUser: state.currentUserReducer,
   };
 }
