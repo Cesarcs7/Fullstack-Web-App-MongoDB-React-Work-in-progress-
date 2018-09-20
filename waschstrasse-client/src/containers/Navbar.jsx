@@ -13,7 +13,14 @@ class Navbar extends Component {
             <img src={logo} alt="Simple Movie Manager" />
           </Link>
           </div>
-        
+          <ul className='nav navbar-nav navigation_links'>
+          <li>
+            <Link to ='waschstrasse'>Waschstrasse</Link>
+          </li>
+          <li>
+            <Link to ='anbieter'>Anbieter</Link>
+          </li>
+        </ul>
         <ul className='nav navbar-nav navbar-right'>
           <li>
             <Link to ='signup'>Sign up</Link>
@@ -28,8 +35,8 @@ class Navbar extends Component {
   }
 }
 
-function mapStateToProps(state){
-  return{
+function mapStateToProps(state) {
+  return {
     currentUser: state.currentUserReducer,
   };
 }

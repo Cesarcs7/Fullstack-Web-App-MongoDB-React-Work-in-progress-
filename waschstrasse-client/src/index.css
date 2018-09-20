@@ -6,6 +6,10 @@ body {
   background-color: lightblue;
 }
 
+.testborder {
+  border: 2px solid black;
+  }
+
 /* Nav */
 
 .navbar {
@@ -36,7 +40,32 @@ ul.nav.navbar-nav li {
   margin: 0 0.5rem;
 }
 
+.navigation_links {
+  display: flex;
+  margin-right: 50%;
+}
 
+/* Authforms */
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authForm .innerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.innerForm label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
 
 .home-hero {
   width: 100vw;
