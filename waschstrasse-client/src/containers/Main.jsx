@@ -7,10 +7,10 @@ import {
 import { connect } from 'react-redux';
 import Homepage from '../components/Homepage';
 import AuthForm from '../components/AuthForm';
-import { authUser } from '../store/actions/authAction';
+import { authUser, authsync } from '../store/actions/authAction';
 
 const Main = (props) => {
-  const { authUser } = props;
+  const { authUser, authsync } = props;
   return (
     <div className="container">
       <Switch>
@@ -23,7 +23,7 @@ const Main = (props) => {
             <AuthForm
               buttonText="Einloggen"
               heading="Als anbieter einloggen"
-              onAuth={authUser}
+              onAuth={authsync}
               signupAnbieter
               {...props}
             />)}
@@ -41,4 +41,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps, { authUser })(Main));
+export default withRouter(connect(mapStateToProps, { authUser, authsync })(Main));

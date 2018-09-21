@@ -22,7 +22,7 @@ export default class AuthForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { onAuth } = this.props;
-    onAuth('signup', this.state).then(() => {
+    onAuth('signin', this.state).then(() => {
       console.log('Shit, bro');
     });
   }
@@ -32,8 +32,8 @@ export default class AuthForm extends Component {
     const { heading, buttonText } = this.props;
     return (
       <div>
-        <div className="authForm testborder">
-          <form action="" onSubmit={this.handleSubmit} className="innerForm testborder">
+        <div className="authForm">
+          <form action="" onSubmit={this.handleSubmit} className="innerForm">
             <h2>{heading}</h2>
             <label htmlFor="email">
               Email
