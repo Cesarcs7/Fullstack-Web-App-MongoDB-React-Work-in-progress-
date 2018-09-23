@@ -23,7 +23,7 @@ const Main = (props) => {
             <AuthForm
               buttonText="Einloggen"
               heading="Als anbieter einloggen"
-              onAuth={authsync}
+              onAuth={authUser}
               signupAnbieter
               {...props}
             />)}
