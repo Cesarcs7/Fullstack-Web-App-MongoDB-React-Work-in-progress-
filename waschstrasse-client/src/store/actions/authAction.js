@@ -8,12 +8,6 @@ export function setCurrentUser(user) {
   };
 }
 
-function dispatchAction(firma) {
-  return (dispatch) => {
-    dispatch(setCurrentUser(firma));
-  };
-}
-
 export function authUser(type, userData) {
   return (dispatch) => {
     return new Promise((resolve, reject) => {
@@ -29,5 +23,6 @@ export function authUser(type, userData) {
 
 export async function authsync(type, data) {
   const response = await apiCall('post', type, data);
-  return dispatchAction(response);
+  const { token, ...user } = response;
+  this.props.store.dispatch(setCurrentUser(user));
 }
