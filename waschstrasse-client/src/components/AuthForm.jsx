@@ -29,12 +29,27 @@ export default class AuthForm extends Component {
 
   render() {
     const { email } = this.state;
-    const { heading, buttonText } = this.props;
+    const {
+      heading,
+      buttonText,
+      errors,
+      history,
+      removeError,
+    } = this.props;
+
+    history.listen(() => {
+      removeError();
+    });
     return (
       <div>
         <div className="authForm">
           <form action="" onSubmit={this.handleSubmit} className="innerForm">
             <h2>{heading}</h2>
+            {errors && (
+              <div className="alert alert-danger">
+                {errors}
+              </div>
+            )}
             <label htmlFor="email">
               Email
               <input className="form-control" id="email" name="email" type="text" onChange={this.handleChange} value={email} />
@@ -60,4 +75,7 @@ AuthForm.propTypes = {
   heading: PropTypes.string.isRequired,
   onAuth: PropTypes.func.isRequired,
   buttonText: PropTypes.string.isRequired,
+  errors: PropTypes.string.isRequired,
+  history: PropTypes.shape({}).isRequired,
+  removeError: PropTypes.func.isRequired,
 };
