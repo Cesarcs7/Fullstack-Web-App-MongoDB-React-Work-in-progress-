@@ -21,10 +21,10 @@ export default class AuthForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { onAuth } = this.props;
+    const { onAuth, history } = this.props;
     onAuth('signin', this.state).then(() => {
-      console.log('Shit, bro');
-    });
+      history.push('/');
+    }).catch(err => err);
   }
 
   render() {
@@ -37,9 +37,13 @@ export default class AuthForm extends Component {
       removeError,
     } = this.props;
 
-    history.listen(() => {
-      removeError();
-    });
+    if (errors) {
+      const unlisten = history.listen(() => {
+        removeError();
+        unlisten();
+      });
+    }
+
     return (
       <div>
         <div className="authForm">

@@ -13,12 +13,15 @@ body {
 /* Nav */
 
 .navbar {
-  margin-bottom: 1rem;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 2%;
   height: 100px;
 }
 
 .navbar a {
   font-weight:bold;
+  font-size: 100%;
 }
 
 .navbar a:hover {
@@ -27,22 +30,27 @@ body {
   cursor: pointer;
 }
 
-.navbar-brand > img{
-  display: inline-block;
-  width: 90px;
-  margin-bottom: 2px;
-  margin-right: 5px;
-  margin-left: 200px;
-  border-radius: 2px;
+.logo{
+  margin-left:10%;
+  height: 100%;
 }
 
-ul.nav.navbar-nav li {
-  margin: 0 0.5rem;
+.localwashLogo{
+  height: 100%;
 }
 
 .navigation_links {
+  width: 60%;
+  height: 50%;
+  font-size: 120%;
   display: flex;
-  margin-right: 50%;
+  align-items: center;
+  margin-left: 3%;
+  list-style-type: none;
+}
+
+.navigation_links  a{
+  margin-left: 20px;
 }
 
 /* Authforms */

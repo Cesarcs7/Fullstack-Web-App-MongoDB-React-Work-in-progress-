@@ -29,15 +29,13 @@ const Main = (props) => {
             <AuthForm
               errors={error}
               removeError={remove}
-              buttonText="Einloggen"
+              buttonText="Anmelden"
               heading="Als anbieter einloggen"
               onAuth={auth}
               signupAnbieter
               {...props}
             />)}
         />
-        <Route exact path="/signin" render={props => (<AuthForm buttonText="Log in" removeError={remove} heading="Welcome Back." {...props} />)} />
-        <Route exact path="/signup" render={props => (<AuthForm buttonText="Sign me up" removeError={remove} heading="Join today." {...props} />)} />
       </Switch>
     </div>
   );

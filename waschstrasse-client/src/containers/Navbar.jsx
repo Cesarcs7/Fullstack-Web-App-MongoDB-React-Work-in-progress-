@@ -1,39 +1,45 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import logo from '../images/localwashlogo.png';
+import { logout } from '../store/actions/authAction';
 
-class Navbar extends Component {
-  render() {
-    return (
-      <nav className="navbar navbar-expand">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <Link to="/" className="navbar-brand">
-            <img src={logo} alt="Simple Movie Manager" />
-          </Link>
-          </div>
-          <ul className='nav navbar-nav navigation_links'>
-          <li>
-            <Link to ='waschstrasse'>Waschstrasse</Link>
-          </li>
-          <li>
-            <Link to ='anbieter'>Anbieter</Link>
-          </li>
-        </ul>
-        <ul className='nav navbar-nav navbar-right'>
-          <li>
-            <Link to ='signup'>Sign up</Link>
-          </li>
-            <li>
-            <Link to="signin">Sign in</Link>
-          </li>
-          </ul>
-        </div>
-      </nav>
-    );
-  }
-}
+const Navbar = (props) => {
+  const { currentUser, abmelden } = props;
+  return (
+    <nav className="navbar ">
+      <div className=" logo ">
+        <Link to="/">
+          <img src={logo} alt="LocalWash" className="localwashLogo" />
+        </Link>
+      </div>
+      <ul className="navigation_links ">
+        <li>
+          <Link to="waschstrasse">Waschstrasse</Link>
+        </li>
+        <li>
+          <Link to="anbieter">Anbieter</Link>
+        </li>
+      </ul>
+      {currentUser.isAuthenticated && (
+      <ul className="logged">
+        <li>
+          <Link to="anbieter">{currentUser.user.firmaName}</Link>
+        </li>
+        <li>
+          <button type="button" onClick={abmelden}>Abmelden</button>
+        </li>
+      </ul>)}
+    </nav>
+  );
+};
+
+
+Navbar.propTypes = {
+  currentUser: PropTypes.shape({}).isRequired,
+  abmelden: PropTypes.func.isRequired,
+};
 
 function mapStateToProps(state) {
   return {
@@ -41,4 +47,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, null)(Navbar);
+export default connect(mapStateToProps, { abmelden: logout })(Navbar);
