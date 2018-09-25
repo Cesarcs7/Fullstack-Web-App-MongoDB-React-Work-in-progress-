@@ -11,11 +11,16 @@ import { authUser } from '../store/actions/authAction';
 import { removeError } from '../store/actions/errorAction';
 
 const Main = (props) => {
-  const { auth, error, remove } = props;
+  const {
+    auth,
+    error,
+    remove,
+    currentUser,
+  } = props;
   return (
     <div className="container">
       <Switch>
-        <Route exact path="/" render={props => <Homepage removeError={remove} {...props} />} />
+        <Route exact path="/" render={props => (<Homepage currentUser={currentUser} {...props} />)} />
         <Route exact path="/waschstrasse" render={props => (<AuthForm removeError={remove} buttonText="Log in" heading="Welcome Back." {...props} />)} />
         <Route
           exact
