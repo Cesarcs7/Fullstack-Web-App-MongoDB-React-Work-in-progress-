@@ -91,3 +91,22 @@ body {
   background-position: center center;
   background-size: cover;
 }
+
+/* AdminPanel */
+
+.newWaschstrasse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newWaschstrasse .icon{
+  color: #1DA947;
+  margin-right: 2%;
+  font-size: 50px;
+}
+
+.newWaschstrasse i:hover{
+  color: #158936;
+  cursor: pointer;
+}

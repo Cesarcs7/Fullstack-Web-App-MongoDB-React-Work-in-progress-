@@ -1,6 +1,7 @@
 import apiCall from '../../services/api';
 import { SET_CURRENT_USER } from '../actionTypes';
 import { addError, removeError } from './errorAction';
+import { creatingWaschstrasseFlag } from './flagsActions';
 
 export function setCurrentUser(user) {
   return {
@@ -12,6 +13,7 @@ export function setCurrentUser(user) {
 export function logout() {
   return (dispatch) => {
     localStorage.clear();
+    dispatch(creatingWaschstrasseFlag(false));
     dispatch(setCurrentUser({}));
   };
 }

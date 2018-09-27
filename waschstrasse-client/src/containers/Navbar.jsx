@@ -28,7 +28,7 @@ const Navbar = (props) => {
           <Link to="anbieter">{currentUser.user.firmaName}</Link>
         </li>
         <li>
-          <button type="button" onClick={abmelden}>Abmelden</button>
+          <button className="btn btn-outline-primary" type="button" onClick={abmelden}>Abmelden</button>
         </li>
       </ul>)}
     </nav>

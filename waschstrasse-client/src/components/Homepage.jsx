@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import AdminPanel from '../containers/AdminPanel';
 
 const Homepage = ({ currentUser }) => {
   if (!currentUser.isAuthenticated) {
@@ -15,9 +16,7 @@ const Homepage = ({ currentUser }) => {
     );
   }
   return (
-    <div>
-      <h1>fuck</h1>
-    </div>
+    <AdminPanel />
   );
 };
 
