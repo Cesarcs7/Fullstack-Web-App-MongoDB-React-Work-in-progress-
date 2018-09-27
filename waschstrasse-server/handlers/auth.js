@@ -8,7 +8,7 @@ exports.signin = async (req, res, next) => {
     const firma = await db.Firma.findOne({
       email: req.body.email,
     });
-    const { id, firmaName, profileImageUrl } = firma;
+    const { id, firmaName, profileImageUrl, waschstrassen } = firma;
     const isMatch = await firma.comparePassword(req.body.password);
     if (isMatch) {
       const token = jwt.sign({
@@ -21,6 +21,7 @@ exports.signin = async (req, res, next) => {
         id,
         firmaName,
         profileImageUrl,
+        waschstrassen,
         token,
       });
     }
