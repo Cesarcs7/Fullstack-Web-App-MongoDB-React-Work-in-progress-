@@ -11,7 +11,10 @@ const waschstrasseSchema = new mongoose.Schema({
   ort: {
     type: String,
   },
-  adresse: {
+  strasse: {
+    type: String,
+  },
+  strassennummer: {
     type: String,
   },
   öfnungszeiten: {
