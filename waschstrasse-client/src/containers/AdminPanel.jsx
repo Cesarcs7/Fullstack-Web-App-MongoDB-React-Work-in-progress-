@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { creatingWaschstrasseFlag } from '../store/actions/flagsActions';
-import FirsWaschstrasseForm from '../components/FirstWaschstrasse';
+import FirstWaschstrasseForm from '../components/FirstWaschstrasse';
 
 class AdminPanel extends Component {
   constructor(props) {
@@ -51,7 +51,7 @@ class AdminPanel extends Component {
     }
     if (currentUser.user.waschstrassen.length === 0 && makingWaschstrasse) {
       return (
-        <FirsWaschstrasseForm />
+        <FirstWaschstrasseForm />
       );
     }
     return (
