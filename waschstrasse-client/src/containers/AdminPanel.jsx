@@ -9,11 +9,22 @@ class AdminPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
+      name: '',
+      strasse: '',
+      PLZ: '',
+      ort: '',
+      nummer: '',
+      montagGeschlossen: false,
+      dienstagGeschlossen: false,
+      mittwochGeschlossen: false,
+      donnerstagGeschlossen: false,
+      freitagGeschlossen: false,
+      samstagGeschlossen: false,
+      sonntagGeschlossen: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRadioButton = this.handleRadioButton.bind(this);
     this.onClick = this.onClick.bind(this);
   }
 
@@ -26,6 +37,12 @@ class AdminPanel extends Component {
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
+    });
+  }
+
+  handleRadioButton(e) {
+    this.setState({
+      [e.target.name]: !this.state.ne,
     });
   }
 
@@ -51,7 +68,7 @@ class AdminPanel extends Component {
     }
     if (currentUser.user.waschstrassen.length === 0 && makingWaschstrasse) {
       return (
-        <FirstWaschstrasseForm />
+        <FirstWaschstrasseForm onChange={this.handleChange} radioButton={this.handleRadioButton} {...this.state} />
       );
     }
     return (
